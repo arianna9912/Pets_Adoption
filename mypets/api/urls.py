@@ -10,10 +10,6 @@ router.register(r'pets', PetsViewSet, basename='pets')
 router.register(r'user', UserViewSet, basename='user')
 router.register(r'adopcion', AdoptionViewSet, basename='adopcion')
 
-
-
-
-
 urlpatterns = [
     path('login/', Login.as_view(), name='login'),
     path('logout/', Logout.as_view(), name='logout'),
@@ -21,6 +17,3 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('', include(router.urls)),
 ]
-
-
-
