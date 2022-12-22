@@ -1,8 +1,8 @@
-
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
 
+
+# Create your models here.
 class Pets(models.Model):
     nombre = models.CharField(max_length=20)
     edad = models.IntegerField()
@@ -10,10 +10,10 @@ class Pets(models.Model):
     raza= models.CharField(max_length=30)
     adoptado=models.BooleanField()
 
-
     class Meta:
         verbose_name = 'Pets'
         ordering = ['id']
+
 
 class Adoption(models.Model):
     pets = models.ForeignKey(Pets, on_delete=models.CASCADE)
@@ -26,4 +26,3 @@ class Adoption(models.Model):
     class Meta:
         verbose_name = 'Adoption'
         ordering = ['id']
-
